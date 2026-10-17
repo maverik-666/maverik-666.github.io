@@ -442,6 +442,23 @@
     return api;
   })();
 
+  // ================= Analytics (GoatCounter events) =================
+  // Events show up in the GoatCounter dashboard as paths like "playable/wave".
+  // count.js loads async, so events fired before it is ready are just skipped.
+  function track(name, title) {
+    try {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({ path: name, title: title || name, event: true });
+      }
+    } catch (err) { /* analytics must never break the page */ }
+  }
+  // anything with data-track="name" is counted when clicked (bubble phase, so
+  // clicks swallowed after a carousel drag are not counted)
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest && e.target.closest("[data-track]");
+    if (el) track(el.getAttribute("data-track"));
+  });
+
   // ================= Player modal (card -> centered window) =================
   var player = document.getElementById("player");
   var win = player.querySelector(".player__window");
@@ -460,6 +477,7 @@
   }
 
   function openPlayer(p, card) {
+    track("playable/" + p.src.split("/").pop().replace(/\.html$/, ""), "Open playable: " + p.title);
     current = p;
     origin = card;
     titleEl.textContent = p.title;
@@ -635,7 +653,11 @@
 
   window.addEventListener("message", function (e) {
     if (e.source !== frame.contentWindow || !e.data) return;
-    if (e.data.type === "playable:redirect") redirectPop();
+    if (e.data.type === "playable:redirect") {
+      redirectPop();
+      // the player got to the store button: the ad "converted"
+      if (current) track("playable-cta/" + current.src.split("/").pop().replace(/\.html$/, ""), "Reached CTA: " + current.title);
+    }
     if (e.data.type === "playable:press") pressing = true;
     if (e.data.type === "playable:unpress") pressing = false;
     if (e.data.type === "playable:progress") loader.target(0.6 + 0.35 * Number(e.data.value || 0));
