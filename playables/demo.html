@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo playable</title>
+<style>
+  html, body { margin: 0; height: 100%; }
+  body {
+    display: grid; place-items: center; text-align: center;
+    font-family: sans-serif; color: #fff; user-select: none;
+    background: #3f9bb0;
+  }
+  button {
+    width: 140px; height: 140px; border-radius: 50%; border: 6px solid #2b1f3b;
+    background: #ffcf5a; font-size: 22px; font-weight: bold; cursor: pointer;
+    transition: transform .08s;
+  }
+  button:active { transform: scale(.9); }
+  p { font-size: 20px; }
+</style>
+</head>
+<body>
+  <div>
+    <p>Placeholder playable<br>Tap the button!</p>
+    <button id="b" type="button">0</button>
+  </div>
+  <script>
+    var n = 0, b = document.getElementById("b");
+    b.onclick = function () { b.textContent = ++n; };
+  </script>
+</body>
+</html>

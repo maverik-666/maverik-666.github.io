@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maxim Balashov</title>
+  <meta name="description" content="Maxim Balashov — Unity developer making playable ads and mobile games.">
+  <link rel="icon" type="image/png" href="Assets/Art/favicon.png">
+  <link rel="preload" href="Assets/Fonts/BalsamiqSans/BalsamiqSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="Assets/Fonts/BalsamiqSans/BalsamiqSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css?v=35">
+</head>
+<body>
+
+  <!-- Hand-drawn wobble filter, used by doodle elements -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="wobble">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" scale="3"/>
+    </filter>
+  </svg>
+
+  <header class="nav">
+    <a class="nav__logo" href="#top" aria-label="Back to top">
+      <img src="Assets/Art/icon.webp" alt="" width="40" height="40">
+      <span>Maxim</span>
+    </a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#experience">Experience</a>
+      <a href="#games">Portfolio</a>
+      <a href="#playables">Playables</a>
+      <a href="#contacts">Contacts</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__avatar">
+        <div class="hero__blob" aria-hidden="true"></div>
+        <div class="hero__cat">
+          <img src="Assets/Art/icon.webp" alt="Maxim's avatar: a brown cat in glasses and a purple scarf" width="735" height="734">
+        </div>
+      </div>
+
+      <div class="hero__text">
+        <p class="hero__hello">Hi there! I'm</p>
+        <h1 class="hero__name">Maxim Balashov</h1>
+        <p class="hero__role">
+          <span class="marker">Unity developer</span> making
+          <span class="marker marker--mustard">playable ads</span> and
+          <span class="marker marker--coral">mobile games</span>.
+        </p>
+        <ul class="hero__facts">
+          <li>3+ years in gamedev</li>
+          <li>Based in Moldova</li>
+        </ul>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#games">See my games</a>
+          <a class="btn" href="Assets/CV%2017.10.pdf" download="Maxim_Balashov_CV.pdf">Download CV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <h2 class="section__title"><span>Experience</span></h2>
+
+      <div class="timeline">
+        <article class="job card">
+          <div class="job__date sticker sticker--mustard">Feb 2026 - Present</div>
+          <h3 class="job__role">Unity Developer</h3>
+          <p class="job__company">Be Nice Games <span>· Montenegro</span></p>
+          <p class="job__about">Playable ads development for large businesses.</p>
+          <ul class="job__list">
+            <li>Developed and maintained reusable Unity templates for playable ads and implemented features across ~20 projects.</li>
+            <li>Created internal Unity tools for adaptive UI and Spine animation previewing, adopted by 5–8 developers.</li>
+            <li>Used Claude Code to develop release-ready playable ads in JavaScript.</li>
+            <li>Created technical documentation for other developers covering recurring playable-ad workflows, including localization and Luna / Unity Playworks compatibility.</li>
+          </ul>
+        </article>
+
+        <article class="job card">
+          <div class="job__date sticker sticker--coral">Jun 2024 - Jan 2026</div>
+          <h3 class="job__role">Unity Developer</h3>
+          <p class="job__company">Work Point <span>· Moldova</span></p>
+          <p class="job__about">Studio developing and publishing its own games for iOS and Android in casual, action, and strategy genres.</p>
+          <ul class="job__list">
+            <li>Sole developer of Civilization Wars, independently analyzing an existing game's mechanics and designing their implementation from scratch.</li>
+            <li>Developed AI and task systems that allowed game units to react to player actions and the game environment.</li>
+            <li>Responsible for persistent save architecture that kept older saves compatible after updates.</li>
+            <li>Released and maintained the game on iOS and Android, reaching ~50k Google Play downloads.</li>
+          </ul>
+        </article>
+
+        <article class="job card card--small">
+          <div class="job__date sticker">Sep 2021 - Jun 2025</div>
+          <h3 class="job__role">Computer Technologies College of Odessa</h3>
+          <p class="job__company">Software Engineering degree</p>
+        </article>
+      </div>
+
+      <h3 class="subtitle">Tech stack</h3>
+      <div class="stack">
+        <div class="stack__col">
+          <div class="stack__group">
+            <p class="stack__label">Code</p>
+            <ul class="chips"><li>SOLID</li><li>C#</li><li>Java</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__label">Unity</p>
+            <ul class="chips"><li>UniTask</li><li>DOTween</li><li>Zenject</li><li>Unity IAP</li><li>Localization</li><li>Unity Multiplayer</li><li>Spine</li><li>UI</li><li>Cinemachine</li></ul>
+          </div>
+        </div>
+        <div class="stack__col">
+          <div class="stack__group">
+            <p class="stack__label">SDKs and analytics</p>
+            <ul class="chips"><li>Firebase</li><li>Facebook SDK</li><li>GameAnalytics</li><li>Tenjin</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__label">Publishing</p>
+            <ul class="chips"><li>Xcode</li><li>App Store Connect</li><li>Google Play Console</li><li>Luna / Unity Playworks</li></ul>
+          </div>
+        </div>
+        <div class="stack__col">
+          <div class="stack__group">
+            <p class="stack__label">Tools</p>
+            <ul class="chips"><li>Claude</li><li>Codex</li><li>Git</li></ul>
+            <ul class="chips"><li>Trello</li><li>Asana</li><li>ClickUp</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PIXEL WORLD: GAMES + PLAYABLES ============ -->
+    <div class="pixel-world">
+      <div class="dither-edge dither-edge--top" aria-hidden="true"></div>
+      <canvas class="pixel-reveal" aria-hidden="true"></canvas>
+
+      <!-- ===== Games ===== -->
+      <section id="games">
+        <div class="px-section">
+          <h2 class="px-title"><span class="px-title__arrow" aria-hidden="true">&gt;</span> PORTFOLIO<span class="px-cursor" aria-hidden="true">_</span></h2>
+        </div>
+
+        <div class="showcase showcase--dim px-showcase-wrap" data-showcase="games" aria-roledescription="carousel" aria-label="Games">
+          <div class="showcase__viewport">
+            <div class="showcase__track">
+
+              <article class="showcase__item game-card px-frame">
+                <div class="px-frame__inner px-placeholder" data-cover="Assets/Art/GamePreviews/cws.webp">
+                  <div class="game-card__panel px-panel">
+                    <div>
+                      <h3 class="game-card__title">CIVILIZATION WARS</h3>
+                      <p class="game-card__desc">As the sole developer, I was responsible for the architecture, tech stack, release, and live support.</p>
+                    </div>
+                    <div class="game-card__links">
+                      <a class="px-button" href="https://play.google.com/store/apps/details?id=civilization.wars.kingdom.strategy" target="_blank" rel="noopener">GOOGLE PLAY</a>
+                      <a class="px-button" href="https://apps.apple.com/us/app/civilization-wars-strategy/id6739465049" target="_blank" rel="noopener">APP STORE</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="showcase__item game-card px-frame">
+                <div class="px-frame__inner px-placeholder" data-cover="Assets/Art/GamePreviews/fsm.webp">
+                  <div class="game-card__panel px-panel">
+                    <div>
+                      <h3 class="game-card__title">FIND SORT MATCH</h3>
+                      <p class="game-card__desc">I added new features and supported existing codebase.</p>
+                    </div>
+                    <div class="game-card__links">
+                      <a class="px-button" href="https://play.google.com/store/apps/details?id=com.gan.puzzleone" target="_blank" rel="noopener">GOOGLE PLAY</a>
+                      <a class="px-button" href="https://apps.apple.com/md/app/find-sort-match-sorting-game/id6448245615" target="_blank" rel="noopener">APP STORE</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="showcase__item game-card px-frame">
+                <div class="px-frame__inner px-placeholder" data-cover="Assets/Art/GamePreviews/wireup.webp">
+                  <div class="game-card__panel px-panel">
+                    <div>
+                      <h3 class="game-card__title">WIRE UP</h3>
+                      <p class="game-card__desc">I was the developer and game designer responsible for the project from concept to completion, working together with a 2D artist.</p>
+                    </div>
+                    <div class="game-card__links">
+                      <a class="px-button" href="https://mav-666.itch.io/wire-up" target="_blank" rel="noopener">ITCH.IO</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+          <div class="showcase__controls">
+            <button class="px-button px-button--icon" type="button" data-prev aria-label="Previous game">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 2h4v2H8zM6 4h4v2H6zM4 6h4v4H4zM6 10h4v2H6zM8 12h4v2H8z"/></svg>
+            </button>
+            <div class="showcase__dots"></div>
+            <button class="px-button px-button--icon" type="button" data-next aria-label="Next game">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 2h4v2H4zM6 4h4v2H6zM8 6h4v4H8zM6 10h4v2H6zM4 12h4v2H4z"/></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Playables ===== -->
+      <section id="playables">
+        <div class="px-section">
+          <h2 class="px-title"><span class="px-title__arrow" aria-hidden="true">&gt;</span> PLAYABLE ADS<span class="px-cursor" aria-hidden="true">_</span></h2>
+        </div>
+
+        <div class="showcase px-showcase-wrap" data-showcase="playables" aria-roledescription="carousel" aria-label="Playable ads" style="--showcase-gap: 20px">
+          <div class="showcase__viewport">
+            <div class="showcase__track" id="playables-track">
+              <!-- filled from js/main.js (PLAYABLES list) -->
+            </div>
+          </div>
+          <div class="showcase__controls">
+            <button class="px-button px-button--icon" type="button" data-prev aria-label="Previous playable">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 2h4v2H8zM6 4h4v2H6zM4 6h4v4H4zM6 10h4v2H6zM8 12h4v2H8z"/></svg>
+            </button>
+            <div class="showcase__dots"></div>
+            <button class="px-button px-button--icon" type="button" data-next aria-label="Next playable">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 2h4v2H4zM6 4h4v2H6zM8 6h4v4H8zM6 10h4v2H6zM4 12h4v2H4z"/></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="dither-edge dither-edge--bottom" aria-hidden="true"></div>
+    </div>
+
+    <!-- ============ CONTACTS ============ -->
+    <section class="section" id="contacts">
+      <h2 class="section__title"><span>Contacts</span></h2>
+
+      <div class="contact card">
+        <img class="contact__cat" src="Assets/Art/icon.webp" alt="" width="140" height="140">
+        <div class="contact__body">
+          <p class="contact__lead">Say hi!</p>
+
+          <div class="contact__rows">
+            <button class="contact__row" type="button" data-copy="maximilian280806m@gmail.com" aria-label="Copy e-mail address">
+              <span class="contact__label">E-mail</span>
+              <span class="contact__value">maximilian280806m@gmail.com</span>
+              <span class="copy-icon" aria-hidden="true"></span>
+            </button>
+            <button class="contact__row" type="button" data-copy="+37376050372" aria-label="Copy phone number">
+              <span class="contact__label">Phone</span>
+              <span class="contact__value">+373 76 050 372</span>
+              <span class="copy-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="socials">
+            <a class="btn btn--social" href="https://github.com/maverik-666" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub
+            </a>
+            <a class="btn btn--social" href="https://www.linkedin.com/in/maxim-balashov-8b03b829a/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="14" height="14" rx="3" fill="currentColor"/><path style="fill:var(--card)" d="M4 6.5h1.8V12H4zM4.9 3.6a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM7 6.5h1.7v.8c.3-.5.9-.9 1.8-.9 1.6 0 1.9 1 1.9 2.4V12h-1.8V9.2c0-.7 0-1.4-.9-1.4s-1 .7-1 1.4V12H7z"/></svg>
+              LinkedIn
+            </a>
+            <a class="btn btn--social" href="https://mav-666.itch.io/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2 3h12l1.5 3v1.2c0 .9-.7 1.6-1.6 1.6-.9 0-1.6-.7-1.6-1.6 0 .9-.7 1.6-1.6 1.6S9.1 8.1 9.1 7.2c0 .9-.7 1.6-1.6 1.6S6 8.1 6 7.2c0 .9-.7 1.6-1.6 1.6S2.8 8.1 2.8 7.2c0 .9-.7 1.6-1.6 1.6H.5V6zM2 9.6c.5 0 1-.1 1.4-.4.4.3.9.4 1.4.4V14H2zm9.2 0c.5 0 1-.1 1.4-.4.4.3.9.4 1.4.4V14h-2.8zM6.4 10h3.2v4H6.4z"/></svg>
+              itch.io
+            </a>
+            <a class="btn btn--primary" href="Assets/CV%2017.10.pdf" download="Maxim_Balashov_CV.pdf">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Maxim Balashov · Cat-approved</p>
+  </footer>
+
+  <!-- ============ PLAYABLE MODAL ============ -->
+  <div class="player" id="player" hidden>
+    <div class="player__backdrop" data-close></div>
+    <div class="player__window px-frame" role="dialog" aria-modal="true" aria-labelledby="player-title">
+      <div class="px-frame__inner">
+        <div class="player__bar">
+          <span class="player__title" id="player-title"></span>
+          <div class="player__controls">
+            <button class="px-button px-button--icon" type="button" id="player-restart" aria-label="Restart playable" title="Restart">
+              <img src="Assets/Art/reload.png" alt="" width="36" height="36">
+            </button>
+            <button class="px-button px-button--icon" type="button" data-close aria-label="Close playable" title="Close">
+              <img src="Assets/Art/cross.png" alt="" width="36" height="36">
+            </button>
+          </div>
+        </div>
+        <div class="player__screen">
+          <iframe id="player-frame" title="Playable ad" allow="autoplay; fullscreen" sandbox="allow-scripts"></iframe>
+          <!-- pixel loading screen, drawn in main.js -->
+          <div class="player__loader" id="player-loader" hidden>
+            <canvas width="64" height="64" aria-hidden="true"></canvas>
+            <span class="sr-only">Loading</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js?v=35"></script>
+</body>
+</html>
