@@ -798,17 +798,42 @@
     reveals.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  // ================= Active nav link =================
+  // ================= Active nav link + address bar =================
+  // The section in the middle of the screen is highlighted in the menu and put
+  // into the URL (#games, ...), so the current address is a link to it.
+  // replaceState keeps the Back button history clean; the hero clears the hash.
   var links = document.querySelectorAll(".nav__links a");
+  // The URL is left alone until a link like /#playables has been honoured:
+  // jump there once the layout has settled (fonts, carousels), then start syncing.
+  var syncUrl = false;
+  var initialTarget = location.hash.length > 1 ? document.getElementById(location.hash.slice(1)) : null;
+  function startUrlSync() { setTimeout(function () { syncUrl = true; }, 400); }
+  window.addEventListener("load", function () {
+    if (!initialTarget) { startUrlSync(); return; }
+    var ready = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+    ready.then(function () {
+      initialTarget.scrollIntoView({ behavior: "instant", block: "start" });
+      startUrlSync();
+    });
+  });
+  function setCurrentSection(id) {
+    links.forEach(function (a) {
+      a.classList.toggle("is-active", !!id && a.getAttribute("href") === "#" + id);
+    });
+    var want = id ? "#" + id : "";
+    if (syncUrl && location.hash !== want && window.history && history.replaceState) {
+      history.replaceState(null, "", location.pathname + location.search + want);
+    }
+  }
   if ("IntersectionObserver" in window) {
+    var hero = document.querySelector(".hero");
     var navIo = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
-        links.forEach(function (a) {
-          a.classList.toggle("is-active", a.getAttribute("href") === "#" + en.target.id);
-        });
+        setCurrentSection(en.target === hero ? "" : en.target.id);
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
+    if (hero) navIo.observe(hero);
     document.querySelectorAll("main section[id]").forEach(function (s) { navIo.observe(s); });
   }
 
