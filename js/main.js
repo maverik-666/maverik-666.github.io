@@ -1018,7 +1018,7 @@
   }
 
   function play() {
-    var duration = 900;
+    var duration = 1100; // the layer now spans the whole (tall) pixel world
     var start = performance.now();
     function step(now) {
       var k = Math.min(1, (now - start) / duration);
@@ -1047,6 +1047,10 @@
     }, { rootMargin: "0px 0px -35% 0px" });
     worldIo.observe(worldEl);
     window.addEventListener("resize", function () { if (!played) setup(); });
+    // the world's height settles once fonts load; rebuild the layer to match
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { if (!played) setup(); });
+    }
   } else {
     canvas.remove();
   }

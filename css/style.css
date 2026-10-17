@@ -296,7 +296,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 
 .pixel-reveal {
-  position: absolute; left: 0; top: -64px; width: 100%; height: calc(100vh + 64px);
+  /* covers the whole pixel world including both dithered edges */
+  position: absolute; left: 0; top: -64px; width: 100%; height: calc(100% + 128px);
   pointer-events: none; z-index: 5;
   image-rendering: pixelated;
 }
